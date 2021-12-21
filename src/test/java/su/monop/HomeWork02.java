@@ -10,12 +10,14 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
 public class HomeWork02 {
-    //arrange
+
+   //arrange
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "1920x1080";
     }
-    //act
+
+   //act
     @Test
     void fillPracticeFormTests() {
         open("https://demoqa.com/automation-practice-form");
@@ -39,22 +41,20 @@ public class HomeWork02 {
 
         $("#uploadPicture").uploadFromClasspath("new.txt");
 
-        $("#currentAddress").setValue("My current address");
+        $("#currentAddress").setValue("My current address 123");
 
         $("#react-select-3-input").setValue("Rajasthan").pressEnter();
         $("#react-select-4-input").setValue("Jaipur").pressEnter();
 
         $("#submit").click();
 
+       //assert
+        $("#example-modal-sizes-title-lg").shouldBe(visible);
+        $(".table-responsive").shouldHave(text("Lex"), text("G"), text("123@test.com"),
+                text("Other"), text("9991118877"), text("12 August,1986"), text("Chemistry, Social Studies"),
+                text("Reading, Music"), text("new.txt"), text("My current address 123"), text("Rajasthan Jaipur"));
 
     }
-
-
-    //assert
-
-
-
-
 
 
 }
