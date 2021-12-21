@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class HomeWork02 {
     //arrange
@@ -21,26 +23,28 @@ public class HomeWork02 {
         $("#lastName").setValue("G");
         $("#userEmail").setValue("123@test.com");
         $("[for='gender-radio-3']").click();
-        $("#userNumber").setValue("9991234567");
+
+        $("#userNumber").setValue("9991118877");
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("August");
         $(".react-datepicker__year-select").selectOption("1986");
         $(".react-datepicker__day--012").click();
 
-        $("#subjectsInput").setValue("English").pressEnter();
-        $("#subjectsInput").setValue("Computer Science").pressEnter();
-        $("[for=hobbies-checkbox-1]").click();
+        $("#subjectsInput").setValue("Chemistry").pressEnter();
+        $("#subjectsInput").setValue("Social Studies").pressEnter();
+
+        $("[for=hobbies-checkbox-2]").click();
         $("[for=hobbies-checkbox-3]").click();
 
-        $("#uploadPicture").uploadFromClasspath("");
+        $("#uploadPicture").uploadFromClasspath("new.txt");
 
         $("#currentAddress").setValue("My current address");
+
         $("#react-select-3-input").setValue("Rajasthan").pressEnter();
         $("#react-select-4-input").setValue("Jaipur").pressEnter();
 
         $("#submit").click();
-
 
 
     }
