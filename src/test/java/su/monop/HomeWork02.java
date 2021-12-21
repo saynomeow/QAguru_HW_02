@@ -19,7 +19,7 @@ public class HomeWork02 {
 
    //act
     @Test
-    void fillPracticeFormTests() {
+    void testFillThePracticeForm() {
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Lex");
         $("#lastName").setValue("G");
@@ -51,10 +51,7 @@ public class HomeWork02 {
        //assert
         $("#example-modal-sizes-title-lg").shouldBe(visible);
         $(".table-responsive").shouldHave(text("Lex"), text("G"), text("123@test.com"),
-                text("Other"), text("9991118877"), text("12 August,1986"), text("Chemistry, Social Studies"),
-                text("Reading, Music"), text("new.txt"), text("My current address 123"), text("Rajasthan Jaipur"));
-
+          text("Other"), text("9991118877"), text("12 August,1986"), text("Chemistry, Social Studies"),
+          text("Reading, Music"), text("new.txt"), text("My current address 123"), text("Rajasthan Jaipur"));
     }
-
-
 }
